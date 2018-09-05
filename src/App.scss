@@ -1,0 +1,106 @@
+$primaryColor: #bdb9b9;
+$secondaryColor: #EF6C00;
+$secondaryColorTransparent: #EF6C0099;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    padding: 0;
+    margin: 0;
+}
+.App{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fy-header-container{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    margin: 0.4em 0em;
+    position: relative;
+    .fy-header-menu{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        li{
+            background-color: transparent;
+            padding: 1em 1.4em;
+            transition: background-color .3s ease-in, color .3s ease-in-out ;
+            cursor: pointer;
+            margin: 0 .2em;
+            user-select: none;
+            &:hover{
+                background-color: $secondaryColor;
+                color: white;
+            }
+        }
+
+    }
+}
+
+.fy-main-container {
+    position: relative;
+    width: 80%;
+    flex-grow: 1;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    .fy-card{
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50vh;
+        max-height: 300px;
+        .fy-card-header{
+            height: 120px;
+            background-color: $secondaryColor;
+        }
+        .avatar {
+            max-width: 50px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #e1124433;
+      }
+    }
+
+}
+.fy-footer-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: .8em 0;
+    background-color: $secondaryColor;
+    ul{
+        display: flex;
+        flex-direction: row;
+        li{
+            padding: 0.3em 1em ;
+            user-select: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+    }
+}
