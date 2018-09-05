@@ -1,0 +1,22 @@
+.fy-footer-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: .8em 0;
+    background-color: var(--secondaryColor);
+}
+.fy-footer-container ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.fy-footer-container li{
+    padding: 0.3em 1em ;
+    user-select: none;
+    color: white;
+    cursor: pointer;
+}
