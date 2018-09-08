@@ -7,7 +7,7 @@ body.preload *{
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', Arial, Helvetica Neue, sans-serif;
+    font-family: Arial, Helvetica Neue, sans-serif;
     overflow: hidden;
 }
 ul {
@@ -55,6 +55,20 @@ li {
             }
         }
 
+    }
+    .fy-main-logo-container {
+        cursor: pointer;
+        img {
+            top: 0;
+            position: absolute;
+        }
+        img.fy-logo-active {
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+        &.active .fy-logo-active{
+            opacity: 1;
+        }
     }
 }
 
@@ -153,7 +167,7 @@ li {
 }
 
 
-.bg, .bg2, .bg3, .bg4, .bg5, .bg6  {
+.bg, .bg2, .bg3, .bg4, .bg5, .bg6, .bg7 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -194,4 +208,10 @@ li {
     background: linear-gradient(270deg, #c8d8d4, #819691);
     -webkit-clip-path: polygon(88% 76%, 61% 75%, 100% 100%, 100% 63%);
     clip-path: polygon(88% 76%, 61% 75%, 100% 100%, 100% 63%);
+}
+.bg7{
+    z-index: -6;
+    background: linear-gradient(270deg, #c0e9de, #7fc7b5);
+    -webkit-clip-path: polygon(0 0, 0 21%, 21% 16%, 26% 26%, 68% 0);
+    clip-path: polygon(0 0, 0 21%, 21% 16%, 26% 26%, 68% 0);
 }

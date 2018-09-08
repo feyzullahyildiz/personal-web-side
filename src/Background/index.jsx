@@ -10,6 +10,7 @@ class Background extends Component {
                 <div className="bg4" />
                 <div className="bg5" />
                 <div className="bg6" />
+                <div className="bg7" />
             </React.Fragment>
         );
     }

@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import './mainpagelogo.css'
 import {changePage} from '../redux/actions'
 import {connect} from 'react-redux'
+import logoActive from './logo-active.png'
+import logoPassive from './logo-passive.png'
 class MainPageLogo extends Component {
     render() {
-        const {changepage} = this.props
+        const {changepage, page} = this.props
+        let activeClass = null
+        if(page === 'MAIN'){
+            activeClass = 'active'
+        }
         return (
-            <span onMouseEnter={changepage} className="fy-main-logo-container">
-                A.Feyzullah YILDIZ
-            </span>
+            <div onMouseEnter={changepage} className={`fy-main-logo-container ${activeClass}`}>
+                <img className="fy-logo-passive" src={logoPassive}/>
+                <img className="fy-logo-active" src={logoActive}/>
+            </div>
         );
     }
 }
@@ -16,4 +23,7 @@ class MainPageLogo extends Component {
 const mapDispatchToProps = (dispatch) => ({
     changepage: () => dispatch(changePage('MAIN'))
 })
-export default connect(undefined, mapDispatchToProps)(MainPageLogo);
+const mapStateToProps = (state) => ({
+    page: state.main.page
+})
+export default connect(mapStateToProps, mapDispatchToProps)(MainPageLogo);
