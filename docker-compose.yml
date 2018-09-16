@@ -1,0 +1,19 @@
+version: "3.6"
+
+services:
+  my-web-side:
+    image: nginx:1.14-perl
+    volumes:
+      - ./build:/usr/share/nginx/html
+    ports:
+      - 80:80
+    depends_on: 
+      - node-builder
+
+  node-builder:
+    image: node:8-slim
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app:Z
+    command: bash -c "npm install && npm run build"
