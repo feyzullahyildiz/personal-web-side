@@ -9,31 +9,34 @@ class MainManagerContainer extends Component {
         return true
     }
     render() {
-        const {page, nextAnimationDirection} = this.props
+        const {page, nextAnimationDirection, lang} = this.props
+        if(!lang){
+            return null
+        }
         return (
             <div className="fy-main-container">
                 <React.Fragment>
                     <MainManagerComponent open={page === 'MAIN'} hideAnim={this._oldPage === 'MAIN'} nextAnimationDirection={nextAnimationDirection}>
                         <React.Fragment>
-                            <p>Ana Sayfa</p>
+                            <p>{lang['pages']['MAIN']}</p>
                         </React.Fragment>
                     </MainManagerComponent>
 
                     <MainManagerComponent open={page === 'BLOG'} hideAnim={this._oldPage === 'BLOG'} nextAnimationDirection={nextAnimationDirection}>
                         <React.Fragment>
-                            <p>Blog</p>
+                            <p>{lang['pages']['BLOG']}</p>
                         </React.Fragment>
                     </MainManagerComponent>
 
                     <MainManagerComponent open={page === 'CONTACT'} hideAnim={this._oldPage === 'CONTACT'} nextAnimationDirection={nextAnimationDirection}>
                         <React.Fragment>
-                            <p>İletişim</p>
+                            <p>{lang['pages']['CONTACT']}</p>
                         </React.Fragment>
                     </MainManagerComponent>
                     
                     <MainManagerComponent open={page === 'ABOUT'} hideAnim={this._oldPage === 'ABOUT'} nextAnimationDirection={nextAnimationDirection}>
                         <React.Fragment>
-                            <p>Hakkımda </p>
+                            <p>{lang['pages']['ABOUT']}</p>
                         </React.Fragment>
                     </MainManagerComponent>
                 </React.Fragment>
@@ -44,9 +47,11 @@ class MainManagerContainer extends Component {
 MainManagerContainer.propTypes ={
     page: PropTypes.oneOf(['MAIN', 'ABOUT', 'CONTACT', 'BLOG']),
     nextAnimationDirection: PropTypes.bool,
+    
 }
 const mapStoreToProps = (store) => ({
     page: store.main.page,
-    nextAnimationDirection: store.main.nextAnimationDirection
+    nextAnimationDirection: store.main.nextAnimationDirection,
+    lang: store.main.lang
   })
 export default connect(mapStoreToProps)(MainManagerContainer);

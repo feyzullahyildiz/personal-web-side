@@ -7,13 +7,6 @@ class MainManagerComponent extends Component {
         if(!open){
             isHidden = 'hide'
             if(hideAnim){
-                // if(nextAnimationDirection){
-                //     isLeft = 'left'
-                //     this._isLeft = isLeft
-                // }else{
-                //     isLeft = 'right'
-                //     this._isLeft = isLeft
-                // }
             }else{
                 if(!this._isLeft){
                     this._isLeft = nextAnimationDirection ? 'left' : 'right' 
